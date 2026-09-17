@@ -21,9 +21,18 @@
   home.packages = with pkgs; [
     tree
     vim
-    git
     vscodium
   ];
+
+  programs.git = {
+    enable = true;
+    settings = {
+      user = {
+        name = "bsukiennik";
+        email = "bastien.sukiennik@epitech.eu";
+      };
+    }; 
+  };
 
   programs.home-manager.enable = true;
 
