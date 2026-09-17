@@ -9,6 +9,13 @@
       modifier = "Mod4";
 
       terminal = "ghostty"; 
+
+      output."*".bg = "${./minimal-landscape.jpg} fill";
     };
+  };
+
+  home.file."minimal-landscape.jpg" = {
+    source = ./minimal-landscape.jpg;
+    target = ".config/sway/wallpapers/minimal-landscape.jpg";
   };
 }
