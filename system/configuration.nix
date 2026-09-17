@@ -41,6 +41,8 @@
     LC_TELEPHONE = "fr_FR.UTF-8";
     LC_TIME = "fr_FR.UTF-8";
   };
+  
+  programs.sway.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
