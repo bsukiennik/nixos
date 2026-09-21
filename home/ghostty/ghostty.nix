@@ -1,11 +1,10 @@
 { ... }:
 
 {
-  # TODO configure this
   programs.ghostty = {
     enable = true;
-    enableFishIntegration = true;
     settings = {
+      command = "fish";
       font-family = "Iosevska Nerd Font";
       font-size = "14";
       background-opacity = 0.5;

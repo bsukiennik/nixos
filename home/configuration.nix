@@ -33,6 +33,7 @@
     vscodium
     microfetch
     nerd-fonts.iosevka
+    zoxide
   ];
 
   programs.git = {
