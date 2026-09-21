@@ -61,11 +61,6 @@
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  programs.firefox = {
-    enable = true;
-    package = pkgs.librewolf;
-  };
   
   nixpkgs.config.allowUnfree = true;
 

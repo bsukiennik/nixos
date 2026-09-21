@@ -5,11 +5,20 @@
     ./fish/fish.nix
     ./ghostty/ghostty.nix
     ./sway/sway.nix
+    ./librewolf/librewolf.nix
   ];
 
   home = {
     username = "bassme";
     homeDirectory = "/home/bassme";
+  };
+
+  gtk = {
+    enable = true;
+    font = {
+      name = "Iosevka Nerd Font";
+      size = 10;
+    };
   };
 
   nixpkgs = {
@@ -22,6 +31,8 @@
     tree
     vim
     vscodium
+    microfetch
+    nerd-fonts.iosevka
   ];
 
   programs.git = {
