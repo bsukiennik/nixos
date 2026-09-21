@@ -9,7 +9,7 @@ let
   wallapaper = "a_flower_on_a_dark_background.png";
 
   terminal = "ghostty";
-  lock = "swaylock -i ${./${wallapaper}}";
+  lock = "swaylock -i ${./${wallapaper}} --indicator-x-position 960 --indicator-y-position 900";
   menu = "wmenu-run";
 in {
   wayland.windowManager.sway = {
@@ -38,6 +38,42 @@ in {
       };
 
       modifier = "Mod4";
+
+      window = {
+        border = 1;
+        titlebar = false;
+      };
+
+      colors = {
+        focused = {
+          background = "#FFFFFF";
+          border = "#E56064";
+          childBorder = "#E56064";
+          text = "#FFFFFF";
+          indicator = "#E56064";
+        };
+        focusedInactive = {
+          background = "#FFFFFF";
+          border = "#1F2331";
+          childBorder = "#1F2331";
+          text = "#FFFFFF";
+          indicator = "#1F2331";
+        };
+        placeholder = {
+          background = "#FFFFFF";
+          border = "#1F2331";
+          childBorder = "#1F2331";
+          text = "#FFFFFF";
+          indicator = "#1F2331";
+        };
+        unfocused = {
+          background = "#FFFFFF";
+          border = "#1F2331";
+          childBorder = "#1F2331";
+          text = "#FFFFFF";
+          indicator = "#1F2331";
+        };
+      };
 
       keybindings = {
         "${modifier}+q" = "kill";
@@ -98,6 +134,7 @@ in {
         # "XF86AudioNext" = "exec mpc next";
       };
     };
+
     extraConfig = ''
       bindgesture swipe:right workspace prev
       bindgesture swipe:left workspace next
