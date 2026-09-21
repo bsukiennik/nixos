@@ -1,14 +1,16 @@
 { ... }:
 
 {
+  # TODO configure this
   programs.ghostty = {
     enable = true;
     enableFishIntegration = true;
     settings = {
-      background-opacity = "0.70";
-      background-blur = 90;
-      font-family = "Iosevka Nerd Font";
-      font-size = "15";
+      font-family = "Iosevska Nerd Font";
+      font-size = "14";
+      background-opacity = 0.5;
+      background-blur = 15;
+      theme = "Iceberg Dark";
     };
   };
 }
