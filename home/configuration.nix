@@ -33,7 +33,7 @@
     vscodium
     microfetch
     nerd-fonts.iosevka
-    zoxide
+    zoxide # maybe it does not work on fish
   ];
 
   programs.git = {
