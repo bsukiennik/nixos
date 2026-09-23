@@ -32,7 +32,6 @@
   programs.sway.enable = true;
 
   services.displayManager.gdm.enable = true;
-  # services.desktopManager.gnome.enable = true;
 
   services.xserver.xkb = {
     layout = "fr";
@@ -58,6 +57,21 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     ];
+  };
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        ControllerMode = "bredr"; # Fix frequent Bluetooth audio dropouts
+        Experimental = true;
+        FastConnectable = true;
+      };
+      Policy = {
+        AutoEnable = true;
+      };
+    };
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

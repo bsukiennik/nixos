@@ -6,6 +6,7 @@
     ./ghostty/ghostty.nix
     ./sway/sway.nix
     ./librewolf/librewolf.nix
+    ./i3status-rust/i3status-rust.nix
   ];
 
   home = {
@@ -34,6 +35,7 @@
     microfetch
     nerd-fonts.iosevka
     zoxide # maybe it does not work on fish
+    spotify
   ];
 
   programs.git = {

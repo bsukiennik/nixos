@@ -124,15 +124,49 @@ in {
 
         "${modifier}+Shift+e" = "exec swaynag -t warning -m 'Do you want to logout?' -b 'Yes' 'swaymsg exit'";
 
-        # "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
-        # "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
-        # "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
-
-        # "XF86AudioPlay" = "exec mpc toggle";
-        # "XF86AudioPause" = "exec mpc toggle";
-        # "XF86AudioPrev" = "exec mpc prev";
-        # "XF86AudioNext" = "exec mpc next";
+        "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
+        "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
+        "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
       };
+
+      bars = [
+        {
+          statusCommand = "i3status-rs ~/.config/i3status-rust/config-bottom.toml";
+          fonts = {
+            names = [
+              "Iosevka Nerd Font"
+            ];
+            size = 10.0;
+          };
+          position = "bottom";
+          colors = {
+            background = "#1F2331";
+            separator = "#1F2331";
+            statusline = "#E56064";
+
+            activeWorkspace = {
+              border = "#333a53";
+              background = "#1F2331";
+              text = "#93A1A1";
+            };
+            focusedWorkspace = {
+              border = "#E56064";
+              background = "#e5606489";
+              text = "#93A1A1";
+            };
+            inactiveWorkspace = {
+              border = "#333a53";
+              background = "#1F2331";
+              text = "#93A1A1";
+            };
+            urgentWorkspace = {
+              border = "#E56064";
+              background = "#e5606489";
+              text = "#93A1A1";
+            };
+          };
+        }
+      ];
     };
 
     extraConfig = ''
