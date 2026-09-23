@@ -23,11 +23,6 @@
           }
           {
             block = "custom";
-            command = "echo \"󰕾 $(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\\d+(?=%)' | head -n 1)%\"";
-            interval = 5;
-          }
-          {
-            block = "custom";
             command = "echo 󰂯";
             interval = "once";
             click = [
