@@ -133,6 +133,8 @@ in {
 
         "XF86MonBrightnessUp" = "exec brightnessctl set +10%";
         "XF86MonBrightnessDown" = "exec brightnessctl set 10%-";
+
+        "Print" = "exec flameshot gui";
       };
 
       bars = [
