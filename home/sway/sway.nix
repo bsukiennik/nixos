@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 let
   fonts =  {
@@ -7,10 +7,6 @@ let
   };
 
   wallapaper = "a_flower_on_a_dark_background.png";
-
-  terminal = "ghostty";
-  lock = "swaylock -i ${./${wallapaper}} --indicator-x-position 960 --indicator-y-position 900";
-  menu = "wmenu-run";
 in {
   wayland.windowManager.sway = {
     enable = true;
@@ -76,7 +72,11 @@ in {
         };
       };
 
-      keybindings = {
+      keybindings = let 
+        terminal = "ghostty";
+        lock = "swaylock -i ${./${wallapaper}} --indicator-x-position 960 --indicator-y-position 900";
+        menu = "wmenu-run";
+      in {
         "${modifier}+q" = "kill";
 
         "${modifier}+f" = "fullscreen toggle";
@@ -182,4 +182,19 @@ in {
       bindgesture swipe:left workspace next
     '';
   };
+
+  services.swayidle = let 
+      lock = "${pkgs.swaylock}/bin/swaylock --daemonize -i ${./${wallapaper}} --indicator-x-position 960 --indicator-y-position 900";
+    in {
+      enable = true;
+      events = {
+        "before-sleep" = lock;
+      };
+      timeouts = [
+        {
+          timeout = 60;
+          command = lock;
+        }
+      ];
+    };
 }
