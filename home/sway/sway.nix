@@ -8,6 +8,12 @@ let
 
   wallapaper = "a_flower_on_a_dark_background.png";
 in {
+  imports = [
+    ./flameshot.nix # Screenshot utility
+    ./i3status-rust.nix # Information in swaybar
+    ./mako.nix # Notification utility
+  ];
+
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;

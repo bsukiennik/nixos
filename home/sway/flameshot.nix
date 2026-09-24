@@ -1,6 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    grim # for wayland integration
+  ];
+
   services.flameshot = {
     enable = true;
     settings = {

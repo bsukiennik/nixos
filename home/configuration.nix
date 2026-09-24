@@ -2,12 +2,10 @@
 
 {
   imports = [
-    ./fish/fish.nix
-    ./ghostty/ghostty.nix
     ./sway/sway.nix
+    ./ghostty/ghostty.nix
+    ./fish/fish.nix
     ./librewolf/librewolf.nix
-    ./i3status-rust/i3status-rust.nix
-    ./flameshot/flameshot.nix
   ];
 
   home = {
@@ -37,7 +35,6 @@
     nerd-fonts.iosevka
     zoxide # maybe it does not work on fish
     spotify
-    grim
   ];
 
   programs.git = {
