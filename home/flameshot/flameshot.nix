@@ -5,7 +5,6 @@
     enable = true;
     settings = {
       General = {
-        # savePath = "/$HOME/Pictures/Screenshot";
         disabledTrayIcon = true;
         showStartupLaunchMessage = false;
         saveAsFileExtension = ".png";
@@ -14,7 +13,6 @@
         showHelp = true;
         showSidePanelButton = true;
 
-        # For Wayland (Install Grim seperately)
         useGrimAdapter = true;
         disabledGrimWarning = true;
       };
