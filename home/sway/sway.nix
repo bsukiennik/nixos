@@ -29,15 +29,16 @@ in {
 
       output = {
         "*".bg = "${./${wallapaper}} fill";
-        "eDP-1" = {
-          position = "0 0";
-        };
-        "HDMI-A-1" = {
-          position = "0 -1080";
-        };
+        # "eDP-1" = {
+        #   position = "0 0";
+        # };
+        # "HDMI-A-1" = {
+        #   position = "0 -1080";
+        # };
       };
 
       modifier = "Mod4";
+      floating.modifier = "Mod4";
 
       window = {
         border = 1;
@@ -93,6 +94,8 @@ in {
         "${modifier}+Shift+Right" = "move right";
         "${modifier}+Shift+Up" = "move up";
         "${modifier}+Shift+Down" = "move down";
+
+        "${modifier}+Shift+Space" = "floating toggle";
 
         "${modifier}+Ctrl+Left" = "workspace prev";
         "${modifier}+Ctrl+Right" = "workspace next";
