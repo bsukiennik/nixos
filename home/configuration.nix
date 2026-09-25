@@ -7,6 +7,7 @@
     ./fish/fish.nix
     ./librewolf/librewolf.nix
     ./vesktop/vesktop.nix
+    ./vscodium/vscodium.nix
   ];
 
   home = {
@@ -31,7 +32,6 @@
   home.packages = with pkgs; [
     tree
     vim
-    vscodium
     microfetch
     nerd-fonts.iosevka
     zoxide # maybe it does not work on fish
