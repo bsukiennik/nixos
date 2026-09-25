@@ -6,6 +6,7 @@
     ./ghostty/ghostty.nix
     ./fish/fish.nix
     ./librewolf/librewolf.nix
+    ./vesktop/vesktop.nix
   ];
 
   home = {
@@ -35,6 +36,7 @@
     nerd-fonts.iosevka
     zoxide # maybe it does not work on fish
     spotify
+    clang
   ];
 
   programs.git = {
