@@ -37,6 +37,7 @@
     zoxide # maybe it does not work on fish
     spotify
     clang
+    nautilus
   ];
 
   programs.git = {
