@@ -31,7 +31,10 @@
   
   programs.sway.enable = true;
 
-  services.displayManager.gdm.enable = true;
+  services.displayManager = {
+    gdm.enable = true;
+    defaultSession = "sway";
+  };
 
   services.xserver.xkb = {
     layout = "fr";
