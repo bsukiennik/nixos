@@ -43,7 +43,22 @@ in {
           }
           {
             block = "custom";
-            command = "echo \"󰁹 $(cat /sys/class/power_supply/BAT0/capacity)%\"";
+            command = ''
+              battery=$(($(cat /sys/class/power_supply/BAT0/capacity)))
+              status=$(cat /sys/class/power_supply/BAT0/status)
+
+              if [ "$status" = "Charging" ]; then
+                echo "<span foreground='#ffff00'>󰂄 $battery%</span>"
+              else
+                if [ "$battery" -lt "10" ]; then
+                  echo "<span foreground='#ff0000'>󰁹 $battery%</span>"
+                elif [ "$battery" -lt "20" ]; then
+                  echo "<span foreground='#ffa500'>󰁹 $battery%</span>"
+                else
+                  echo "󰁹 $battery%"
+                fi
+              fi
+            '';
             interval = 10;
           }
           {
@@ -75,7 +90,7 @@ in {
                 update = true;
                 cmd = "poweroff";
               }
-            ]; 
+            ];
           }
         ];
         settings = {

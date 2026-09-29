@@ -47,7 +47,7 @@
         name = "bsukiennik";
         email = "bastien.sukiennik@epitech.eu";
       };
-    }; 
+    };
   };
 
   programs.home-manager.enable = true;
