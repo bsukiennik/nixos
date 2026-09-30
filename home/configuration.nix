@@ -38,6 +38,9 @@
     spotify
     clang
     nautilus
+    gnumake
+    clang-tools
+    bear
   ];
 
   programs.git = {

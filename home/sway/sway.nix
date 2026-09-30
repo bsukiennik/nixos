@@ -78,7 +78,7 @@ in {
         };
       };
 
-      keybindings = let 
+      keybindings = let
         terminal = "ghostty";
         lock = "swaylock -i ${./${wallapaper}} --indicator-x-position 960 --indicator-y-position 900";
         menu = "wmenu-run";
@@ -143,6 +143,9 @@ in {
         "Print" = "exec flameshot gui";
       };
 
+      # TODO when the pc is lock the bar crashes
+      # TODO find a solution to make the volume understandable
+      # TODO make something for bluetooth and wifi (maybe change the logo if not connected)
       bars = [
         {
           statusCommand = "i3status-rs ~/.config/i3status-rust/config-bottom.toml";
@@ -189,7 +192,7 @@ in {
     '';
   };
 
-  services.swayidle = let 
+  services.swayidle = let
       lock = "${pkgs.swaylock}/bin/swaylock --daemonize -i ${./${wallapaper}} --indicator-x-position 960 --indicator-y-position 900";
     in {
       enable = true;
